@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: db
+    restart: always
+    tty: true
+    volumes:
+      - "./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql"
+    environment:
+      - MYSQL_DATABASE=nodedb
+      - MYSQL_ROOT_PASSWORD=root
+
+  nodejs:
+    image: du2xdocker/hello-nodejs
+    container_name: nodejs
+
+  nginx:
+    image: du2xdocker/hello-nginx
+    container_name: nginx
+    ports:
+      - "8080:80"
+
