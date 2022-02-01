@@ -6,6 +6,7 @@ Generate nodejs app package.json:
 ```
 npm init -y
 npm install
+npm install express mysql
 ```
 
 Build nodejs app docker image:
