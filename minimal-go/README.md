@@ -20,18 +20,10 @@ Run the builded image
 
 Cd to the minimal-go Dockerfile directory and run the following cmd:
 ```
-docker build -t du2xdocker/minimal-go .
+docker run du2xdocker/minimal-go
 ``` 
 
-
-Run from dockerhub hosted image
--------
-I pushed this image to my dockerhub account, then, it can be used to run in your conteiner.
-
-On any directory, run the following cmd:
-```
-docker run du2xdocker/minimal-go
-```
+This command will work even if you run before building, because it this, the image will be fetched from hub.docker
 
 
 
