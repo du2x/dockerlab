@@ -19,6 +19,8 @@ services:
       dockerfile: Dockerfile.hello_nodejs
     image: du2xdocker/hello-nodejs
     container_name: nodejs
+    depends_on:
+      - db    
 
   nginx:
     build: 
@@ -28,4 +30,6 @@ services:
     container_name: nginx
     ports:
       - "8080:80"
+    depends_on:
+      - nodejs
 
